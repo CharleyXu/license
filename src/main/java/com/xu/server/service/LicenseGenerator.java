@@ -1,5 +1,6 @@
 package com.xu.server.service;
 
+import com.xu.client.service.LicenseManagerHolder;
 import com.xu.server.bean.CustomKeyStoreParam;
 import com.xu.server.bean.LicenseGeneratorParam;
 import de.schlichtherle.license.CipherParam;
@@ -39,7 +40,7 @@ public class LicenseGenerator {
 	public boolean generateLicense() {
 		try {
 			logger.info(param);
-			LicenseManager licenseManager = new CustomLicenseManager(initLicenseParam());
+			LicenseManager licenseManager = LicenseManagerHolder.getLicenseManager(initLicenseParam());
 			LicenseContent licenseContent = initLicenseContent();
 
 			licenseManager.store(licenseContent, new File(param.getLicensePath()));

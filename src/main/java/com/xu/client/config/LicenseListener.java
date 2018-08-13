@@ -1,8 +1,6 @@
 package com.xu.client.config;
 
 import com.google.common.base.Strings;
-import com.xu.client.bean.LicenseVerifyParam;
-import com.xu.client.service.LicenseVerify;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -54,15 +52,15 @@ public class LicenseListener implements ApplicationListener<ContextRefreshedEven
     if (context == null) {
       if (!Strings.isNullOrEmpty(licensePath)) {
         logger.info("=====开始安装证书 =====");
-        LicenseVerifyParam param = new LicenseVerifyParam();
-        param.setSubject(subject);
-        param.setPublicAlias(publicAlias);
-        param.setStorePass(storePass);
-        param.setLicensePath(licensePath);
-        param.setPublicKeysStorePath(publicKeysStorePath);
-        LicenseVerify licenseVerify = new LicenseVerify();
-        //安装证书
-        licenseVerify.install(param);
+//        LicenseVerifyParam param = new LicenseVerifyParam();
+//        param.setSubject(subject);
+//        param.setPublicAlias(publicAlias);
+//        param.setStorePass(storePass);
+//        param.setLicensePath(licensePath);
+//        param.setPublicKeysStorePath(publicKeysStorePath);
+//        LicenseVerify licenseVerify = new LicenseVerify();
+//        //安装证书
+//        licenseVerify.install(param);
         logger.info("====== 证书安装结束 =====");
       }
     }

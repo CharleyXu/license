@@ -1,5 +1,6 @@
 package com.xu.server.service;
 
+import com.google.common.base.Strings;
 import com.xu.server.bean.LicenseCheckModel;
 import com.xu.server.util.ServerInfoUtil;
 import de.schlichtherle.license.LicenseContent;
@@ -15,7 +16,6 @@ import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -199,7 +199,9 @@ public class CustomLicenseManager extends LicenseManager {
   }
 
   /**
-   * 校验当前服务器的IP/Mac地址是否在可被允许的IP范围内<br/> 如果存在IP在可被允许的IP/Mac地址范围内，则返回true
+   * 校验当前服务器的IP/Mac地址是否在可被允许的IP范围内
+   *
+   * 如果存在IP在可被允许的IP/Mac地址范围内，则返回true
    */
   private boolean checkIpAddress(List<String> expectedList, List<String> serverList) {
     if (expectedList != null && expectedList.size() > 0) {
@@ -220,16 +222,10 @@ public class CustomLicenseManager extends LicenseManager {
    * 校验当前服务器硬件（主板、CPU等）序列号是否在可允许范围内
    */
   private boolean checkSerial(String expectedSerial, String serverSerial) {
-    if (StringUtils.isNotBlank(expectedSerial)) {
-      if (StringUtils.isNotBlank(serverSerial)) {
-        if (expectedSerial.equals(serverSerial)) {
-          return true;
-        }
-      }
-      return false;
-    } else {
-      return true;
+    if (!Strings.isNullOrEmpty(expectedSerial) && !Strings.isNullOrEmpty(serverSerial)) {
+      return expectedSerial.equals(serverSerial);
     }
+    return true;
   }
 
 }
