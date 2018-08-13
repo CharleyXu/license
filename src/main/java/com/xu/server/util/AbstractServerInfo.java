@@ -1,5 +1,6 @@
-package com.xu.server.license;
+package com.xu.server.util;
 
+import com.xu.server.bean.LicenseCheckModel;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author CharleyXu Created on 2018/8/2.
  */
-public abstract class AbstractServerInfos {
+public abstract class AbstractServerInfo {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 

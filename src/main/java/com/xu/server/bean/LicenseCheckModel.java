@@ -1,4 +1,4 @@
-package com.xu.server.license;
+package com.xu.server.bean;
 
 import java.io.Serializable;
 import java.util.List;

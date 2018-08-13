@@ -1,5 +1,7 @@
-package com.xu.server.license;
+package com.xu.server.service;
 
+import com.xu.server.bean.CustomKeyStoreParam;
+import com.xu.server.bean.LicenseGeneratorParam;
 import de.schlichtherle.license.CipherParam;
 import de.schlichtherle.license.DefaultCipherParam;
 import de.schlichtherle.license.DefaultLicenseParam;
@@ -8,13 +10,12 @@ import de.schlichtherle.license.LicenseContent;
 import de.schlichtherle.license.LicenseCreator;
 import de.schlichtherle.license.LicenseManager;
 import de.schlichtherle.license.LicenseParam;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.security.auth.x500.X500Principal;
 import java.io.File;
 import java.text.MessageFormat;
 import java.util.prefs.Preferences;
+import javax.security.auth.x500.X500Principal;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * License生成类

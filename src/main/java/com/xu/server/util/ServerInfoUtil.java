@@ -1,4 +1,4 @@
-package com.xu.server.license;
+package com.xu.server.util;
 
 import com.google.common.base.Strings;
 import java.io.BufferedReader;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  *
  * @author CharleyXu Created on 2018/8/2.
  */
-public class ServerInfos extends AbstractServerInfos {
+public class ServerInfoUtil extends AbstractServerInfo {
 
 	@Override
 	protected String getCPUSerial() throws Exception {

@@ -1,7 +1,6 @@
-package com.xu.server.license;
+package com.xu.server.bean;
 
 import de.schlichtherle.license.AbstractKeyStoreParam;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

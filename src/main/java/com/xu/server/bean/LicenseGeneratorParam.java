@@ -1,7 +1,6 @@
-package com.xu.server.license;
+package com.xu.server.bean;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.util.Date;
 
 /**

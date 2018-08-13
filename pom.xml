@@ -25,9 +25,6 @@
     <java.version>1.8</java.version>
     <!-- 打包时忽略测试代码 -->
     <skipTests>true</skipTests>
-    <!-- JUnit单元测试 -->
-    <junit>4.12</junit>
-    <!-- Apache Commons系列公共库 -->
     <commons-lang3>3.7</commons-lang3>
     <!-- License -->
     <truelicense>1.33</truelicense>
@@ -64,7 +61,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.7</version>
+      <version>${commons-lang3}</version>
     </dependency>
     <!-- License -->
     <dependency>

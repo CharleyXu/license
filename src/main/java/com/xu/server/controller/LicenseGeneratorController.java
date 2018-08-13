@@ -1,19 +1,18 @@
 package com.xu.server.controller;
 
-import com.xu.server.license.AbstractServerInfos;
-import com.xu.server.license.LicenseCheckModel;
-import com.xu.server.license.LicenseGenerator;
-import com.xu.server.license.LicenseGeneratorParam;
-import com.xu.server.license.ServerInfos;
+import com.xu.server.bean.LicenseCheckModel;
+import com.xu.server.bean.LicenseGeneratorParam;
+import com.xu.server.service.LicenseGenerator;
+import com.xu.server.util.AbstractServerInfo;
+import com.xu.server.util.ServerInfoUtil;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 用于生成证书文件，不能放在给客户部署的代码里
@@ -27,16 +26,16 @@ public class LicenseGeneratorController {
 	/**
 	 * 证书生成路径
 	 */
-	@Value("${license.licensePath}")
+	@Value("${service.licensePath}")
 	private String licensePath;
 
 	/**
 	 * 获取服务器硬件信息
 	 */
-	@RequestMapping(value = "/getServerInfos", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-	public LicenseCheckModel getServerInfos() {
-		AbstractServerInfos abstractServerInfos = new ServerInfos();
-		return abstractServerInfos.getServerInfos();
+	@RequestMapping(value = "/getServerInfo", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+	public LicenseCheckModel getServerInfo() {
+		AbstractServerInfo abstractServerInfo = new ServerInfoUtil();
+		return abstractServerInfo.getServerInfos();
 	}
 
 	/**
