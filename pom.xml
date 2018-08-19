@@ -68,6 +68,14 @@
       <artifactId>truelicense-core</artifactId>
       <version>1.33</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.rrd4j/rrd4j -->
+    <dependency>
+      <groupId>org.rrd4j</groupId>
+      <artifactId>rrd4j</artifactId>
+      <version>3.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
